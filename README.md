@@ -1,9 +1,9 @@
-## Welcome to Sundial!
+# Welcome to Sundial!
 
-##About Sundial
+## About Sundial
 Sundial was created to provide a more configurable calculator for times relevant to Halachah (Jewish Law.) One of the problems we noticed was that the available Halachic times calculators don't always have every Shitah (Legal opinion) represented, and individual Poskim (Legal Decisors) may have their own opinion that may not be covered by existing applications. Perhaps this will even encourage the more professionally created Zemanim sites to update themselves! Nevertheless, you'll hopefully find what you need here, no matter what opinion you follow. We are Orthodox Jews, so the opinions relevant will be those that would be accepted within Orthodoxy. We will also try to keep the default settings as normative as possible, so those who don't know what opinion they hold like (or know for one issue, but not others) can feel confident in using this application.
 
-##Some Examples (This will get a bit technical)
+### Some Examples (This will get a bit technical)
 - Rav Berkovits of Sanhedria Murchevet, Jerusalem, Israel -last time I checked- is of the opinion that Halachic Shkiah is 3/4 Mil (using Sha'os Zemanios) before Tzeis, but that Tzeis is later than 3/4 Mil past visible sunset. This is a P'sharah in Rabbeinu Tam's Shitah to align him more with the Gra's kashya from the metzius.
 - Is Plag HaMinchah to be calculated like the Magein Avraham, the Gra, the Ben Ish Chai...? (As of this writing, if you follow the Ben Ish Chai, you're out of luck!)
 - Do you use regular hours instead of Sha'os Zemanios for everything, like the Terumas HaDeshen? (Most don't, by the way...)
