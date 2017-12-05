@@ -1,4 +1,4 @@
-# Welcome to Sundial!
+## Welcome to Sundial!
 
 ## About Sundial
 Sundial was created to provide a more configurable calculator for times relevant to Halachah (Jewish Law.) One of the problems we noticed was that the available Halachic times calculators don't always have every Shitah (Legal opinion) represented, and individual Poskim (Legal Decisors) may have their own opinion that may not be covered by existing applications. Perhaps this will even encourage the more professionally created Zemanim sites to update themselves! Nevertheless, you'll hopefully find what you need here, no matter what opinion you follow. We are Orthodox Jews, so the opinions relevant will be those that would be accepted within Orthodoxy. We will also try to keep the default settings as normative as possible, so those who don't know what opinion they hold like (or know for one issue, but not others) can feel confident in using this application.
