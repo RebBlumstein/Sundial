@@ -8,13 +8,14 @@ Sundial was created to provide a more configurable calculator for times relevant
 - Is Plag HaMinchah to be calculated like the Magein Avraham, the Gra, the Ben Ish Chai...? (As of this writing, if you follow the Ben Ish Chai, you're out of luck!)
 - Do you use regular hours instead of Sha'os Zemanios for everything, like the Terumas HaDeshen? (Most don't, by the way...)
 - Some hold like, or wish to be machmir for, Tzeis of Rabbeinu Tam as 4 Mil after Shkiah. Here are several ways that this can be calculated:
-  1. To use Shkiah from Sea Level and add 72 minutes in Sha'os Zemanios.
-  3. To use Shkiah from Sea Level and add 90 minutes in Sha'os Zemanios.
-  2. To use Shkiah -taking into account elevation- and add 72 minutes in Sha'os Zemanios.
-  4. To use Shkiah -taking into account elevation- and add 90 minutes in Sha'os Zemanios.
-  5. To find the Solar Altitude Angle of 4 Mil after local Shkiah at Sea Level and use this Solar Altitude to calculate for other days.
-  6. To find the Solar Altitude Angle of 4 Mil after local Shkiah -taking into account elevation- and use this Solar Altitude to calculate for other days.
-  7. To find the Solar Altitude Angle of 4 Mil after Shkiah in Jerusalem -taking into account elevation- and use this Solar Altitude to calculate for other days in all other locations.
-  8. (By the way, in the Sha'os Zemanios examples, did we calculate those Sha'os Zemanios from Neitz to Shkiah, or are they fixed minutes? I guess we'll need to include another several opinions to cover those possibilities!)
-  9. (By the way, in the Solar Altitude examples, will we proceed to use this time of Tzeis to calculate Sha'os Zemanios? ...)
+ - To use Shkiah from Sea Level and add 72 minutes in Sha'os Zemanios.
+ - To use Shkiah from Sea Level and add 90 minutes in Sha'os Zemanios.
+ - To use Shkiah -taking into account elevation- and add 72 minutes in Sha'os Zemanios.
+ - To use Shkiah -taking into account elevation- and add 90 minutes in Sha'os Zemanios.
+ - To find the Solar Altitude Angle of 4 Mil after local Shkiah at Sea Level and use this Solar Altitude to calculate for other days.
+ - To find the Solar Altitude Angle of 4 Mil after local Shkiah -taking into account elevation- and use this Solar Altitude to calculate for other days.
+ - To find the Solar Altitude Angle of 4 Mil after Shkiah in Jerusalem -taking into account elevation- and use this Solar Altitude to calculate for other days in all other locations.
+ - (By the way, in the Sha'os Zemanios examples, did we calculate those Sha'os Zemanios from Neitz to Shkiah, or are they fixed minutes? I guess we'll need to include another several opinions to cover those possibilities!)
+ - (By the way, in the Solar Altitude examples, will we proceed to use this time of Tzeis to calculate Sha'os Zemanios? ...)
+- As you can see, the list of possibilities goes on and on, which is why every Zemanim application designer has to choose just how many opinions they are going to include.
  
