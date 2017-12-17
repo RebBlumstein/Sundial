@@ -1,8 +1,3 @@
-<html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Places Searchbox</title>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -86,8 +81,6 @@
         width: 345px;
       }
     </style>
-  </head>
-  <body>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
     <script>
@@ -169,5 +162,3 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdPu0DQOvziyrBGylIDC5536SMVETUZqE&libraries=places&callback=initAutocomplete"
          async defer></script>
-  </body>
-</html>
