@@ -1,4 +1,19 @@
-<-- Start Custom CSS -->
+
+div.container {
+    overflow: auto;
+    width: 100%;
+}
+ 
+div.left {
+    width: 45%;
+    float: left;
+}
+ 
+div.right {
+    width: 45%;
+    float: right;
+}
+
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
@@ -81,4 +96,3 @@
       #target {
         width: 345px;
       }
-    <-- End Custom CSS -->
