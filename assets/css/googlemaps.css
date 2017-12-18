@@ -3,6 +3,7 @@
        * element that contains the map. */
       #map {
         height: 100%;
+            overflow: visible;
         }
       /* Optional: Makes the sample page fill the window.
       html, body {
