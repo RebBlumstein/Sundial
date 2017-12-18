@@ -1,17 +1,22 @@
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
 
-div.container {
-    overflow: auto;
-    width: 100%;
+.clearfix {
+    display: inline-block;
 }
- 
-div.left {
-    width: 45%;
-    float: left;
+
+html[xmlns] .clearfix {
+    display: block;
 }
- 
-div.right {
-    width: 45%;
-    float: right;
+
+* html .clearfix {
+    height: 1%;
 }
 
       /* Always set the map height explicitly to define the size of the div
