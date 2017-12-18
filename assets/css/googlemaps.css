@@ -4,7 +4,7 @@
       #map {
         height: 100%;
         }
-    #map:after { 
+    #main_content:after { 
         content: " "; 
         display: block;
         clear: both;
