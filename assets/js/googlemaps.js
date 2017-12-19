@@ -63,7 +63,7 @@
             }));
                 
             // Rewrite the result into the paragraph
-            document.getElementById("googlemapsresulttext").innerHTML = "Test!";
+            document.getElementById("googlemapsresulttext").innerHTML = place.geometry.location;
 
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
