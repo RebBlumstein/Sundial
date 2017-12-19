@@ -6,7 +6,7 @@ These equations for calculating solar position are based on the NOAA equations
   Assumes date is a Date
   Assumes timezone is UTC offset
 */
-function getJulianDay(date, timezone) {
+function getJulianDay(date) {
   var epoch = 2415018.5; // Dec 30, 1899 12:00 AM
   var oaDate = (date - new Date(Date.UTC(1899, 11, 30))) / (24 * 60 * 60 * 1000);
   
@@ -17,7 +17,7 @@ function getJulianDay(date, timezone) {
   Assumes date is a Date
   Assumes timezone is UTC offset
 */
-function getJulianCentury(date, timezone) {
+function getJulianCentury(date) {
   var epoch = 2451545; // Jan 1, 2000 12:00 UTC
   var daysInCentury = 36525;
   
