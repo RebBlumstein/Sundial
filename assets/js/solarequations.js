@@ -37,7 +37,7 @@ function GeoMeanLonSun(date) {
   return (i + c*(j + c*k)) % 360;
 }
 
-/* Geometric Mean Anomoly of the Sun, in degrees
+/* Geometric Mean Anomaly of the Sun, in degrees
   Assumes date is a Date
 */
 function GeoMeanAnoSun(date) {
@@ -83,4 +83,16 @@ function SunEqnCenter(date) {
   var z = 0.000289;
   
   return Math.sin(ToRad(m))*(u - c*(v + w*c)) + Math.sin(ToRad(2*m))*(x - y*c) + Math.sin(ToRad(3*m))*z;
+}
+
+/* Sun True Longitude
+*/
+function SunTrueLong(date) {
+  return GeoMeanLonSun(date) + SunEqnCenter(date);
+}
+
+/* Sun True Anomaly
+*/
+function SunTrueLong(date) {
+  return GeoMeanAnoSun(date) + SunEqnCenter(date);
 }
