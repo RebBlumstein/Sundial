@@ -66,8 +66,8 @@
             document.getElementById("GMLat").innerHTML = place.geometry.location.lat();
             document.getElementById("GMLon").innerHTML = place.geometry.location.lng();
                 
-            document.getElementById("locLat").innerHTML = place.geometry.location.lat();
-            document.getElementById("locLon").innerHTML = place.geometry.location.lng();
+            document.getElementById("locLat").value = place.geometry.location.lat();
+            document.getElementById("locLon").value = place.geometry.location.lng();
             
             // Get Elevation and write it into the paragraph; default to 0.
             var elevator = new google.maps.ElevationService;
@@ -76,12 +76,12 @@
                   },
                   function(results, status) {
                         document.getElementById("GMEle").innerHTML = 0;
-                        document.getElementById("locEle").innerHTML = 0;
+                        document.getElementById("locEle").value = 0;
                         if (status === 'OK') {
                               // Retrieve the first result
                               if (results[0]) {
                                     document.getElementById("GMEle").innerHTML = results[0].elevation;
-                                    document.getElementById("locEle").innerHTML = results[0].elevation;
+                                    document.getElementById("locEle").value = results[0].elevation;
                               }
                   }
             });
