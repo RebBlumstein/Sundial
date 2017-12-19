@@ -72,8 +72,8 @@ function ToRad(degrees) {
 /* Sun Equation of Center
 */
 function SunEqnCenter(date) {
-  var c = ;
-  var m = ;
+  var c = GetJulianCentury(date);
+  var m = GeoMeanAnoSun(date);
   
   var u = 1.914602;
   var v = 0.004817;
