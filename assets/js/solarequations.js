@@ -68,3 +68,19 @@ function EccEarthOrbit(date) {
 function ToRad(degrees) {
   return degrees * Math.PI/180;
 }
+
+/* Sun Equation of Center
+*/
+function SunEqnCenter(date) {
+  var c = ;
+  var m = ;
+  
+  var u = 1.914602;
+  var v = 0.004817;
+  var w = 0.000014;
+  var x = 0.019993;
+  var y = 0.000101;
+  var z = 0.000289;
+  
+  return Math.sin(ToRad(m))*(u - c*(v + w*c)) + Math.sin(ToRad(2*m))*(x - y*c) + Math.sin(ToRad(3*m))*z;
+}
