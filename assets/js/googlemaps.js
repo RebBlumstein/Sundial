@@ -64,6 +64,34 @@
                 
             // Rewrite the result into the paragraph
             document.getElementById("googlemapsresulttext").innerHTML = place.geometry.location.lat() + " " + place.geometry.location.lng();
+            if (place.geometry.location.lat() < 0) {
+                  document.getElementById("googlemapsresulttext").innerHTML = place.geometry.location.lat() + " S  ";
+            else {
+                  document.getElementById("googlemapsresulttext").innerHTML = place.geometry.location.lat() + " N  ";
+            }
+            
+            if (place.geometry.location.lng() < 0) {
+                  document.getElementById("googlemapsresulttext").innerHTML += place.geometry.location.lng() + " W";
+            else {
+                  document.getElementById("googlemapsresulttext").innerHTML += place.geometry.location.lng() + " E";
+            }
+            
+            
+            var elevator = new google.maps.ElevationService;
+            elevator.getElevationForLocations({
+                  'locations': [location]
+                  },
+                  function(results, status) {
+                        if (status === 'OK') {
+                              // Retrieve the first result
+                              if (results[0]) {
+                                    document.getElementById("googlemapsresulttext").innerHTML += "<br>Elevation: " + results[0].elevation + ' meters.';
+                              }
+                        }
+                        else {
+                              document.getElementById("googlemapsresulttext").innerHTML += "<br>Elevation: " + results[0].elevation + ' meters.';
+                        }
+                  });
 
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
