@@ -87,12 +87,12 @@ function SunEqnCenter(date) {
 
 /* Sun True Longitude
 */
-function SunTrueLong(date) {
+function SunTrueLon(date) {
   return GeoMeanLonSun(date) + SunEqnCenter(date);
 }
 
 /* Sun True Anomaly
 */
-function SunTrueLong(date) {
+function SunTrueAno(date) {
   return GeoMeanAnoSun(date) + SunEqnCenter(date);
 }
