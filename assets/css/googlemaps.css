@@ -2,8 +2,8 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map.inner {
-        height: 300 px;
-        padding: 150 px 10 px;
+        height: 300px;
+        padding: 150px 10px;
         }
       /* Optional: Makes the sample page fill the window.
       html, body {
