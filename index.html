@@ -6,8 +6,14 @@ title: Test
 
 <div id="MapSection">
   <div id="GoogleMapsResults">
-    <p id="googlemapsresulttext">
+    <p>
       Enter the a place name to get Google Maps information on it.
+    </p>
+    Latitude North: <p id="GMLat">
+    </p>
+    Longitude East: <p id="GMLon">
+    </p>
+    Elevation (meters): <p id="GMEle">
     </p>
   </div>
   <input id="pac-input" class="controls" type="text" placeholder="Search Box">
@@ -16,7 +22,16 @@ title: Test
 </div>
 
 <div id="InputLocation">
-  <input id="locLat" class="controls" type="text" placeholder="Enter Latitide as a number from -89.999 to 89.999 (North is positive)">
-  <input id="locLon" class="controls" type="text" placeholder="Enter Longitude as a number from -179.999 to 179.999 (East is positive)">
-  <input id="locEle" class="controls" type="text" placeholder="Enter Elevation in meters">
+  <p>
+    Latitide: 
+  <input id="locLat" class="controls" type="text" placeholder="-89.9 to 89.9 (N positive)">
+  </p>
+  <p>
+    Longitude: 
+    <input id="locLon" class="controls" type="text" placeholder="-179.9 to 179.9 (E positive)">
+  </p>
+  <p>
+    Elevation:
+    <input id="locEle" class="controls" type="text" placeholder="Elevation in meters">
+  </p>
 </div>
