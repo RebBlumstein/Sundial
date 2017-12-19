@@ -63,37 +63,23 @@
             }));
                 
             // Rewrite the result into the paragraph
-            document.getElementById("googlemapsresulttext").innerHTML = place.geometry.location.lat() + " " + place.geometry.location.lng();
-            if (place.geometry.location.lat() < 0) {
-                  document.getElementById("googlemapsresulttext").innerHTML = "S " + Math.abs(place.geometry.location.lat()) + "  ";
-            }
-            else {
-                  document.getElementById("googlemapsresulttext").innerHTML = "N " + place.geometry.location.lat() + "  ";
-            }
+            document.getElementById("GMLat").innerHTML = place.geometry.location.lat();
+            document.getElementById("GMLon").innerHTML = place.geometry.location.lng();
             
-            if (place.geometry.location.lng() < 0) {
-                  document.getElementById("googlemapsresulttext").innerHTML += "W " + Math.abs(place.geometry.location.lng());
-            }
-            else {
-                  document.getElementById("googlemapsresulttext").innerHTML += "E " + place.geometry.location.lng();
-            }
-            
-            
+            // Get Elevation and write it into the paragraph; default to 0.
             var elevator = new google.maps.ElevationService;
             elevator.getElevationForLocations({
                   'locations': [place.geometry.location]
                   },
                   function(results, status) {
+                        document.getElementById("GMEle").innerHTML = 0;
                         if (status === 'OK') {
                               // Retrieve the first result
                               if (results[0]) {
-                                    document.getElementById("googlemapsresulttext").innerHTML += "<br>Elevation: " + results[0].elevation + ' meters.';
+                                    document.getElementById("GMEle").innerHTML = results[0].elevation;
                               }
-                        }
-                        else {
-                              document.getElementById("googlemapsresulttext").innerHTML += "<br>Elevation: " + results[0].elevation + ' meters.';
-                        }
-                  });
+                  }
+            });
              
 
             if (place.geometry.viewport) {
