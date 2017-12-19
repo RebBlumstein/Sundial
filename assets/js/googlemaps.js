@@ -76,7 +76,7 @@
                   document.getElementById("googlemapsresulttext").innerHTML += place.geometry.location.lng() + " E";
             }
             
-            
+            /*
             var elevator = new google.maps.ElevationService;
             elevator.getElevationForLocations({
                   'locations': [place.geometry.location]
@@ -92,6 +92,7 @@
                               document.getElementById("googlemapsresulttext").innerHTML += "<br>Elevation: " + results[0].elevation + ' meters.';
                         }
                   });
+             */
 
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
