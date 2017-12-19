@@ -62,25 +62,20 @@
               position: place.geometry.location
             }));
                 
-            // Rewrite the result into the paragraphs
-            document.getElementById("GMLat").innerHTML = "Latitude North: " + place.geometry.location.lat();
-            document.getElementById("GMLon").innerHTML = "Longitude East: " + place.geometry.location.lng();
-                
+            // Rewrite the result into the inputs
             document.getElementById("locLat").value = place.geometry.location.lat();
             document.getElementById("locLon").value = place.geometry.location.lng();
             
-            // Get Elevation and write it into the paragraph; default to 0.
+            // Get Elevation and write it into the input; default to 0.
             var elevator = new google.maps.ElevationService;
             elevator.getElevationForLocations({
                   'locations': [place.geometry.location]
                   },
                   function(results, status) {
-                        document.getElementById("GMEle").innerHTML = "Elevation (meters): 0";
                         document.getElementById("locEle").value = 0;
                         if (status === 'OK') {
                               // Retrieve the first result
                               if (results[0]) {
-                                    document.getElementById("GMEle").innerHTML = "Elevation (meters): " + results[0].elevation;
                                     document.getElementById("locEle").value = results[0].elevation;
                               }
                   }
