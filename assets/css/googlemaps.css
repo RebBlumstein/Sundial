@@ -3,7 +3,6 @@
        * element that contains the map. */
       #map.inner {
         height: 300px;
-        padding: 150px 10px;
         }
       /* Optional: Makes the sample page fill the window.
       html, body {
