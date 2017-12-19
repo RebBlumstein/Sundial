@@ -62,3 +62,9 @@ function EccEarthOrbit(date) {
   
   return i - c*(j + k*c);
 }
+
+/* Convert degrees to radians
+*/
+function ToRad(degrees) {
+  return degrees * Math.PI/180;
+}
