@@ -79,7 +79,7 @@
             
             var elevator = new google.maps.ElevationService;
             elevator.getElevationForLocations({
-                  'locations': [location]
+                  'locations': [place.geometry.location]
                   },
                   function(results, status) {
                         if (status === 'OK') {
