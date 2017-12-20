@@ -165,3 +165,12 @@ funtion SunRA(date) {
   
   return ToDeg(Math.atan2(Math.cos(lng), Math.cos(obl)*Math.sin(lng)));
 }
+
+/* Sun Declination (Degrees)
+*/
+function SunDec(date) {
+  var lng = ToRad(SunAppLong(date)); // Sun's Apparent Longitude in Radians
+  var obl = ToRad(OblCorr(date)); // Corrected Obliquity in Radians
+  
+  return ToDeg(Math.asin(Math.sin(obl)*Math.sin(lng)));
+}
