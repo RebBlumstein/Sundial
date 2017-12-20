@@ -203,3 +203,16 @@ function EqnOfTime(date) {
   
   return deltat;
 }
+
+/* Hour-Angle of Sunrise, in Degrees
+  date is a Date
+  lat is latitude in Degrees
+*/
+function HASunrise(date, lat) {
+  var lr = ToRad(lat); // Latitude in Radians
+  var dec = ToRad(SunDec(date)); // Sun Declination in Radians
+  
+  var i = ToRad(90.833);
+  
+  return ToDeg(Math.acos(Math.cos(i)/(Math.cos(lr)*Math.cos(dec)) - Math.tan(lr)*Math.tan(dec)))
+}
