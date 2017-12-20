@@ -185,6 +185,7 @@ function VarY(date) {
 
 /* The Equation of Time (minutes)
 See https://en.wikipedia.org/wiki/Equation_of_time
+Programmer: This appears to be an alternative version of the second-order approximation in e and y.
 */
 function EqnOfTime(date) {
   var gmlng = ToRad(GeoMeanLonSun(date)); // Geometric Mean Longitude of the Sun, in Radians
