@@ -85,14 +85,25 @@ function SunEqnCenter(date) {
   return Math.sin(ToRad(m))*(u - c*(v + w*c)) + Math.sin(ToRad(2*m))*(x - y*c) + Math.sin(ToRad(3*m))*z;
 }
 
-/* Sun True Longitude
+/* Sun True Longitude (Degrees)
 */
 function SunTrueLon(date) {
   return GeoMeanLonSun(date) + SunEqnCenter(date);
 }
 
-/* Sun True Anomaly
+/* Sun True Anomaly (Degrees)
 */
 function SunTrueAno(date) {
   return GeoMeanAnoSun(date) + SunEqnCenter(date);
+}
+
+/* Sun Radius Vector (in AU)
+*/
+function SunRadius(date) {
+  var e = EccEarthOrbit(date); // Eccentricity of Earth's Orbit
+  var a = ToRad(SunTrueAno(date)); // Sun True Anomaly in Radians
+  
+  var i = 1.000001018;
+  
+  return (i*(1 - e*e))/(1 + e*Math.cos(a))
 }
