@@ -99,11 +99,25 @@ function SunTrueAno(date) {
 
 /* Sun Radius Vector (in AU)
 */
-function SunRadius(date) {
+function SunRadiusVector(date) {
   var e = EccEarthOrbit(date); // Eccentricity of Earth's Orbit
   var a = ToRad(SunTrueAno(date)); // Sun True Anomaly in Radians
   
   var i = 1.000001018;
   
   return (i*(1 - e*e))/(1 + e*Math.cos(a))
+}
+
+/* Sun Apparent Longitude (Degrees)
+*/
+function SunAppLong(date) {
+  var c = GetJulianCentury(date); // Julian Century
+  var lng = SunTrueLon(date); // Sun True Longitude in Radians
+  
+  var i = 0.00569;
+  var j = 0.00478;
+  var k = 125.04;
+  var l = 1934.136;
+  
+  return lng - i - j*Math.sin(ToRad(k - l*c));
 }
