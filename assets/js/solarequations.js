@@ -216,3 +216,13 @@ function HASunrise(date, lat) {
   
   return ToDeg(Math.acos(Math.cos(i)/(Math.cos(lr)*Math.cos(dec)) - Math.tan(lr)*Math.tan(dec)))
 }
+
+/* Solar Noon as a fraction of time from 12:00AM to 12:00AM
+*/
+function SolarNoon(date, longitude, timezone) {
+  
+  var deltat = EqnOfTime(date); // Equation of time, in minutes
+  var minInDay = 1440; // Minutes in a Day
+  
+  return (minInDay/2 - 4*longitude - deltat + timezone*60)/minInDay;
+}
