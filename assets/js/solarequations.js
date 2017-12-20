@@ -174,3 +174,11 @@ function SunDec(date) {
   
   return ToDeg(Math.asin(Math.sin(obl)*Math.sin(lng)));
 }
+
+/* Variable y as used in the Equation of Time
+*/
+function VarY(date) {
+  var obl = ToRad(OblCorr(date)); // Corrected Obliquity in Radians
+  
+  return Math.Tan(obl/2)*Math.Tan(obl/2);
+}
