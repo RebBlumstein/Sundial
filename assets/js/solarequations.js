@@ -226,3 +226,23 @@ function SolarNoon(date, longitude, timezone) {
   
   return (minInDay/2 - 4*longitude - deltat + timezone*60)/minInDay;
 }
+
+/* Solar Sunrise as a fraction of time from 12AM to 12AM
+*/
+function SolarSunrise(date, latitude, longitude, timezone) {
+  var HA = HASunrise(date, latitude);
+  var SN = SolarNoon(date, longitude, timezone);
+  var minInDay = 1440;
+  
+  return SN - 4*HA/minInDay;
+}
+
+/* Solar Sunset as a fraction of time from 12AM to 12AM
+*/
+function SolarSunset(date, latitude, longitude, timezone) {
+  var HA = HASunrise(date, latitude);
+  var SN = SolarNoon(date, longitude, timezone);
+  var minInDay = 1440;
+  
+  return SN + 4*HA/minInDay;
+}
