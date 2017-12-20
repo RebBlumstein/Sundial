@@ -63,10 +63,16 @@ function EccEarthOrbit(date) {
   return i - c*(j + k*c);
 }
 
-/* Convert degrees to radians
+/* Convert Degrees to Radians
 */
 function ToRad(degrees) {
   return degrees * Math.PI/180;
+}
+
+/* Convert Radians to Degrees
+*/
+function ToDeg(rad) {
+  return rad * 180/Math.PI;
 }
 
 /* Sun Equation of Center
@@ -149,4 +155,13 @@ function OblCorr(date) {
   var k = 1934.136;
   
   return m + i*Math.cos(ToRad(j - k*c));
+}
+
+/* Sun Right-Ascension (Degrees)
+*/
+funtion SunRA(date) {
+  var lng = ToRad(SunAppLong(date)); // Sun's Apparent Longitude in Radians
+  var obl = ToRad(OblCorr(date)); // Corrected Obliquity in Radians
+  
+  return ToDeg(Math.atan2(Math.cos(lng), Math.cos(obl)*Math.sin(lng)));
 }
