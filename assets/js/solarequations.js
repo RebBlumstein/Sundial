@@ -189,10 +189,16 @@ See https://en.wikipedia.org/wiki/Equation_of_time
 function EqnOfTime(date) {
   var gmlng = ToRad(GeoMeanLonSun(date)); // Geometric Mean Longitude of the Sun, in Radians
   var gmano = ToRad(GeoMeanAnoSun(date)); // Geometric Mean Anomaly of the Sun, in Radians
-  var e = EccEarthOrbit(date); // Eccentricity of Earth's Orbit;
+  var ecc = EccEarthOrbit(date); // Eccentricity of Earth's Orbit;
   var y = VarY(date); // variable y in the Equation of Time
   
-  var deltat = 4*ToDeg(y*Math.sin(2*gmlng)-2*e*Math.sin(gmano)+4*e*y*Math.sin(gmano)*Math.cos(2*gmlng)-0.5*y*y*Math.sin(4*gmlng)-1.25*e*e*Math.sin(2*gmano));
+  var A = y*Math.sin(2*gmlng);
+  var B = 2*ecc*Math.sin(gmano);
+  var C = 4*ecc*y*Math.sin(gmano)*Math.cos(2*gmlng);
+  var D = 0.5*y*y*Math.sin(4*gmlng);
+  var E = 1.25*ecc*ecc*Math.sin(2*gmano);
+  
+  var deltat = 4*ToDeg(A-B+C-D-E);
   
   return deltat;
 }
