@@ -112,7 +112,7 @@ function SunRadiusVector(date) {
 */
 function SunAppLong(date) {
   var c = GetJulianCentury(date); // Julian Century
-  var lng = SunTrueLon(date); // Sun True Longitude in Radians
+  var lng = SunTrueLon(date); // Sun True Longitude
   
   var i = 0.00569;
   var j = 0.00478;
@@ -120,4 +120,20 @@ function SunAppLong(date) {
   var l = 1934.136;
   
   return lng - i - j*Math.sin(ToRad(k - l*c));
+}
+
+/* Mean Obliquity of the Ecliptic (Degrees)
+*/
+function MeanOblEcl(date) {
+  var c = GetJulianCentury(date); // Julian Century
+  
+  var t = 23;
+  var u = 26;
+  var v = 21.448;
+  var w = 46.815;
+  var x = 0.00059;
+  var y = 0.001813;
+  var z = 60;
+  
+  return t + (u + ((v - c*(w + c*(x - c*y))))/z)/z;
 }
