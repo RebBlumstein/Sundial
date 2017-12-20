@@ -137,3 +137,16 @@ function MeanOblEcl(date) {
   
   return t + (u + ((v - c*(w + c*(x - c*y))))/z)/z;
 }
+
+/* Obliquity Corrected (Degrees)
+*/
+function OblCorr(date) {
+  var c = GetJulianCentury(date); // Julian Century
+  var m = MeanOblEcl(date); // Mean Obliquity
+  
+  var i = 0.00256;
+  var j = 125.04;
+  var k = 1934.136;
+  
+  return m + i*Math.cos(ToRad(j - k*c));
+}
