@@ -246,3 +246,41 @@ function SolarSunset(date, latitude, longitude, timezone) {
   
   return SN + 4*HA/minInDay;
 }
+
+/* Sunlight Duration (minutes)
+*/
+function SunlightDuration(date, latitude) {
+  return 8*HASunrise(date, latitude);
+}
+
+/* Day Fraction
+  Returns the fractional part of the current day that has elapsed.
+*/
+function DayFraction(date) {
+  var hr = date.getHours();
+  var min = date.getMinutes();
+  var sec = date.getSeconds();
+  var ms = date.getMilliseconds;
+  
+  var frac = 0;
+  
+  frac += ms / 1000 + sec; // frac now contains seconds from 12:00AM
+  frac = frac / 60 + min; // now minutes from 12:00AM
+  frac = frac / 60 + hr; // hours from 12:00AM
+  
+  frac = frac / 24; // fraction of hours in a day
+  
+  return frac;
+}
+
+/* True Solar Time (minutes)
+*/
+function TrueSolTime(date, longitude, timezone) {
+  var deltat = EqnOfTime(date);
+  var minInHour = 60;
+  var minInDay = 1440;
+  
+  var dayPart = DayFraction(date);
+  
+  return (dayPart*minInDay + deltat + 4*longitude - minInHour*timezone) % minInDay;
+}
