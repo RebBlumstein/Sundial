@@ -300,3 +300,20 @@ function SolarHA(date, longitude, timezone) {
   // shouldn't get here
   return t/4 - 180;
 }
+
+/* Solar Zenith Angle in degrees
+*/
+function SolarZA(date, latitude, longitude, timezone) {
+  var latR = ToRad(latitude); // latitude in Radians
+  var sunDecR = ToRad(SunDec(date)); // Sun Declination in Radians
+  var sunHAR = ToRad(SolarHA(date, longitude, timezone)); // Solar HA in Radians
+  
+  return ToDeg(Math.acos(Math.sin(latR)*Math.sin(sunDecR) + Math.cos(latR)*Math.cos(sunDecR)*Math.cos(sunHAR)));
+}
+
+/* Solar Elevation Angle (in Degrees)
+*/
+function SolarEA(date, latitude, longitude, timezone) {
+  return 90 - SolarZA(date, latitude, longitude, timezone);
+}
+
