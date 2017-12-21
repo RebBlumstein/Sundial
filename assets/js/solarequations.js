@@ -359,3 +359,12 @@ function AtmRefraction(date, latitude, longitude, timezone) {
 function SolarEAatm(date, latitude, longitude, timezone) {
   return SolarEA(date, latitude, longitude, timezone) + AtmRefraction(date, latitude, longitude, timezone);
 }
+
+/* Solar Azimuth Angle in Degrees
+*/
+function SolarAZ(date, latitude, longitude, timezone) {
+  var DecR = ToRad(SunDec(date)); // Solar Declination in Radians
+  var HAR = ToRad(SolarHA(date, longitude, timezone)); // Solar Hour Angle in Radians
+  var ZAR = ToRad(SolarZA(date, latitude, longitude, timezone)); // Solar Zenith Angle in Radians
+  
+}
