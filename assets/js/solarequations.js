@@ -260,22 +260,22 @@ function DayFraction(date) {
   var hr = date.getHours();
   var min = date.getMinutes();
   var sec = date.getSeconds();
-  var ms = date.getMilliseconds;
+  var ms = date.getMilliseconds();
   
-  var frac = 0;
+  var frac;
   
-  frac += ms / 1000 + sec; // frac now contains seconds from 12:00AM
-  frac = frac / 60 + min; // now minutes from 12:00AM
-  frac = frac / 60 + hr; // hours from 12:00AM
+  frac = (ms / 1000) + sec; // seconds from start of current min
+  frac = (frac / 60) + min; // minutes from start of current hour
+  frac = (frac / 60) + hr; // hours from 12:00AM
   
   frac = frac / 24; // fraction of hours in a day
   
   return frac;
 }
 
-/* True Solar Time (minutes)
+/* True Solar Time (minutes % minutes in day)
 */
-function TrueSolTime(date, longitude, timezone) {
+function TrueSolarTime(date, longitude, timezone) {
   var deltat = EqnOfTime(date);
   var minInHour = 60;
   var minInDay = 1440;
