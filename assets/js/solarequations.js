@@ -353,3 +353,9 @@ function AtmRefraction(date, latitude, longitude, timezone) {
     return i/Math.tan(EAR)/j;
   }
 }
+
+/* Solar Elevation Angle Adjusted for Atmospheric Refraction
+*/
+function SolarEAatm(date, latitude, longitude, timezone) {
+  return SolarEA(date, latitude, longitude, timezone) + AtmRefraction(date, latitude, longitude, timezone);
+}
