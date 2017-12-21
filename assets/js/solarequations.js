@@ -284,3 +284,19 @@ function TrueSolarTime(date, longitude, timezone) {
   
   return (dayPart*minInDay + deltat + 4*longitude - minInHour*timezone) % minInDay;
 }
+
+/* Solar Hour Angle in degrees
+*/
+function SolarHA(date, longitude, timezone) {
+  var t = TrueSolarTime(date, longitude, timezone);
+  
+  if(t/4 < 0) {
+    return t/4 + 180;
+  }
+  else {
+    return t/4 - 180;
+  }
+  
+  // shouldn't get here
+  return t/4 - 180;
+}
