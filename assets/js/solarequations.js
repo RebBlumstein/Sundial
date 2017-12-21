@@ -317,3 +317,39 @@ function SolarEA(date, latitude, longitude, timezone) {
   return 90 - SolarZA(date, latitude, longitude, timezone);
 }
 
+/* Approximate Atmospheric Refraction
+*/
+function AtmRefraction(date, latitude, longitude, timezone) {
+  var EA = SolarEA(date, latitude, longitude, timezone);
+  var EAR = ToRad(EA);
+  
+  if (EA > 85) {
+    return 0;
+  }
+  else if (EA > 5) {
+    var i = 58.1;
+    var j = 0.07;
+    var k = 3;
+    var l = 0.000086;
+    var m = 5;
+    var n = 3600;
+    
+    return (i/Math.tan(EAR) - j/Math.pow(Math.tan(EAR), k) + l/Math.pow(Math.tan(EAR), m)) / n;
+  }
+  else if (EA > -0.575) {
+    var i = 735;
+    var j = -518.2;
+    var k = 103.4;
+    var l = -12.79;
+    var m = 0.711;
+    var n = 3600;
+    
+    return (i + EA*(j + EA*(k + EA*(l + EA*m))))/n;
+  }
+  else {
+    var i = -20.772;
+    var j = 3600;
+    
+    return i/Math.tan(EAR)/j;
+  }
+}
