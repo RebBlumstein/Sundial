@@ -363,8 +363,21 @@ function SolarEAatm(date, latitude, longitude, timezone) {
 /* Solar Azimuth Angle in Degrees
 */
 function SolarAZ(date, latitude, longitude, timezone) {
+  var LatR = ToRad(latitude);
   var DecR = ToRad(SunDec(date)); // Solar Declination in Radians
-  var HAR = ToRad(SolarHA(date, longitude, timezone)); // Solar Hour Angle in Radians
-  var ZAR = ToRad(SolarZA(date, latitude, longitude, timezone)); // Solar Zenith Angle in Radians
+  var Ha = SolarHA(date, longitude, timezone); // Solar Hour Angle
+  var ZaR = ToRad(SolarZA(date, latitude, longitude, timezone)); // Solar Zenith Angle in Radians
   
+  if (Ha > 0) {
+    var i = 180;
+    var j = 360;
+    
+    return (ToDeg(Math.acos(((Math.sin(LatR)*Math.cos(ZaR)) - Math.sin(DecR))/(Math.cos(LatR)*Math.sin(ZaR)))) + i) % j;
+  }
+  else {
+    var i = 540;
+    var j = 360;
+    
+    return (i - ToDeg(Math.acos(((Math.sin(LatR)*Math.cos(ZaR)) - Math.sin(DecR))/(Math.cos(LatR)*Math.sin(ZaR))))) % j;
+  }
 }
