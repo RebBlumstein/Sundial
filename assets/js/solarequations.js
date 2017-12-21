@@ -303,7 +303,7 @@ function SolarHA(date, longitude, timezone) {
 
 /* Solar Zenith Angle in degrees
 */
-function SolarZA(date, latitude, longitude, timezone) {
+function SolarZenith(date, latitude, longitude, timezone) {
   var latR = ToRad(latitude); // latitude in Radians
   var sunDecR = ToRad(SunDec(date)); // Sun Declination in Radians
   var sunHAR = ToRad(SolarHA(date, longitude, timezone)); // Solar HA in Radians
@@ -313,14 +313,14 @@ function SolarZA(date, latitude, longitude, timezone) {
 
 /* Solar Elevation Angle (in Degrees)
 */
-function SolarEA(date, latitude, longitude, timezone) {
-  return 90 - SolarZA(date, latitude, longitude, timezone);
+function SolarElevation(date, latitude, longitude, timezone) {
+  return 90 - SolarZenith(date, latitude, longitude, timezone);
 }
 
 /* Approximate Atmospheric Refraction
 */
 function AtmRefraction(date, latitude, longitude, timezone) {
-  var EA = SolarEA(date, latitude, longitude, timezone);
+  var EA = SolarElevation(date, latitude, longitude, timezone);
   var EAR = ToRad(EA);
   
   if (EA > 85) {
@@ -357,7 +357,7 @@ function AtmRefraction(date, latitude, longitude, timezone) {
 /* Solar Elevation Angle Adjusted for Atmospheric Refraction
 */
 function SolarEAatm(date, latitude, longitude, timezone) {
-  return SolarEA(date, latitude, longitude, timezone) + AtmRefraction(date, latitude, longitude, timezone);
+  return SolarElevation(date, latitude, longitude, timezone) + AtmRefraction(date, latitude, longitude, timezone);
 }
 
 /* Solar Azimuth Angle in Degrees
@@ -366,7 +366,7 @@ function SolarAZ(date, latitude, longitude, timezone) {
   var LatR = ToRad(latitude);
   var DecR = ToRad(SunDec(date)); // Solar Declination in Radians
   var Ha = SolarHA(date, longitude, timezone); // Solar Hour Angle
-  var ZaR = ToRad(SolarZA(date, latitude, longitude, timezone)); // Solar Zenith Angle in Radians
+  var ZaR = ToRad(SolarZenith(date, latitude, longitude, timezone)); // Solar Zenith Angle in Radians
   
   if (Ha > 0) {
     var i = 180;
