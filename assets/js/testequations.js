@@ -1,0 +1,3 @@
+/*
+This script is designed to test the NOAA Solar Equations for errors and accuracy.
+*/
