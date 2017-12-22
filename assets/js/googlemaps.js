@@ -80,6 +80,9 @@
                               }
                   }
             });
+                
+            // Get the timezone offset from UTC
+            document.getElementById("locTimeZone").value = place.utc_offset;
              
 
             if (place.geometry.viewport) {
