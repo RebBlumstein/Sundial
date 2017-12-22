@@ -81,8 +81,8 @@
                   }
             });
                 
-            // Get the timezone offset from UTC
-            document.getElementById("locTimeZone").value = place.utc_offset;
+            // Get the timezone offset from UTC, and convert from minutes to hours
+            document.getElementById("locTimeZone").value = place.utc_offset / 60.0;
              
 
             if (place.geometry.viewport) {
