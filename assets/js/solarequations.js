@@ -396,3 +396,28 @@ function SolarAZ(date, latitude, longitude, timezone) {
     return (i - ToDeg(Math.acos(((Math.sin(LatR)*Math.cos(ZaR)) - Math.sin(DecR))/(Math.cos(LatR)*Math.sin(ZaR))))) % j;
   }
 }
+
+
+
+
+
+
+/* My Equations */
+
+/* Horizon Modifier in Degrees
+Elevation from Earth's surface causes the horizon to "Lower"
+elevation in meters
+*/
+function HorizonModifier(elevation) {
+  var h = elevation/1000; // convert elevation to km
+  
+  var R = 6371; // Earth Radius in km
+  
+  return ToDeg(Math.pi/2 - Math.asin(R/(R + h)));
+}
+
+/* Sun Apparent Diameter in Degrees
+*/
+function SunDiameter() {
+  return 0.271013889;
+}
