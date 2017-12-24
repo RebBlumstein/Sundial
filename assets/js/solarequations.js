@@ -159,7 +159,7 @@ function OblCorr(date) {
 
 /* Sun Right-Ascension (Degrees)
 */
-funtion SunRA(date) {
+function SunRA(date) {
   var lng = ToRad(SunAppLong(date)); // Sun's Apparent Longitude in Radians
   var obl = ToRad(OblCorr(date)); // Corrected Obliquity in Radians
   
