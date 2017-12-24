@@ -6,7 +6,10 @@ Writes output to id="TestParagraph"
 var date = new Date(); // Get the current Date and Time
 date.setHours(0, 0, 0, 0); // Set the Time to Midnight
 
-document.getElementById("TestParagraph").value = 
+var outobj = document.getElementById("TestParagraph"); // get the reference for the output paragraph
+
+// Put in the table headers
+outobj.innerHTML = 
   "<table><tr>\n"
     + "<th>Julian Day</th>\n"
     + "<th>Julian Century</th>\n"
@@ -37,4 +40,5 @@ document.getElementById("TestParagraph").value =
     + "<th>Sol Azimu</th>\n"
     + "</tr>\n";
 
-document.getElementById("TestParagraph").value += "</table>";
+// finish the table
+outobj.innerHTML += "</table>";
