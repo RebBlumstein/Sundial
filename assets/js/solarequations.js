@@ -283,6 +283,8 @@ function TimeFromFrac(date, frac) {
   var hr = frac * 24 % 24;
   
   date.setHours(hr, min, sec, ms);
+  
+  return date;
 }
 
 /* True Solar Time (minutes % minutes in day)
