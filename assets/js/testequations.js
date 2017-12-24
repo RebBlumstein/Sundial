@@ -4,7 +4,7 @@ Writes output to id="TestParagraph"
 */
 
 var date = new Date(); // Get the current Date and Time
-date.setHours(0, 0, 0, 0); // Set the Time to Midnight
+date.setHours(0, 6, 0, 0); // Set the Time to 12:06AM
 
 var latitude = document.getElementById("locLat").value;
 var longitude = document.getElementById("locLon").value;
