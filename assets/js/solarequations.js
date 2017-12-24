@@ -180,7 +180,7 @@ function SunDec(date) {
 function VarY(date) {
   var obl = ToRad(OblCorr(date)); // Corrected Obliquity in Radians
   
-  return Math.Tan(obl/2)*Math.Tan(obl/2);
+  return Math.tan(obl/2)*Math.tan(obl/2);
 }
 
 /* The Equation of Time (minutes)
