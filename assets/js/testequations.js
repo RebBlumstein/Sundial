@@ -92,6 +92,9 @@ var sunrise1 = TimeFromFrac(date, AstSunrise(date, latitude, longitude, timezone
 result += "Sunrise1: " + sunrise1 + "<br>";
 result += "Sunrise2: " + TimeFromFrac(sunrise1, AstSunrise(sunrise1, latitude, longitude, timezone)) + "<br>";
 
+var sunset1 = TimeFromFrac(date, AstSunset(date, latitude, longitude, timezone))
+result += "Sunset1: " + sunset1 + "<br>";
+result += "Sunset2: " + TimeFromFrac(sunset1, AstSunset(sunset1, latitude, longitude, timezone)) + "<br>";
 
 //write the result to output
 document.getElementById("TestParagraph").innerHTML = result;
