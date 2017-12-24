@@ -88,8 +88,9 @@ result += "</table>\n";
 result += "<br><br>\n";
 
 result += "-18d: " + FindMorningElevationTime(date, latitude, longitude, timezone, -18) + "<br>";
-result += "Sunrise: " + TimeFromFrac(date, AstSunrise(date, latitude, longitude, timezone)) + "<br>";
-result += "Sunset: " + TimeFromFrac(date, AstSunset(date, latitude, longitude, timezone)) + "<br>";
+var sunrise1 = TimeFromFrac(date, AstSunrise(date, latitude, longitude, timezone));
+result += "Sunrise1: " + sunrise1 + "<br>";
+result += "Sunrise2: " + TimeFromFrac(sunrise1, AstSunset(sunrise1, latitude, longitude, timezone)) + "<br>";
 
 
 //write the result to output
