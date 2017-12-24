@@ -163,7 +163,8 @@ function SunRA(date) {
   var lng = ToRad(SunAppLong(date)); // Sun's Apparent Longitude in Radians
   var obl = ToRad(OblCorr(date)); // Corrected Obliquity in Radians
   
-  return ToDeg(Math.atan2(Math.cos(lng), Math.cos(obl)*Math.sin(lng)));
+  // NOTE: ATAN2 takes parameters in reverse order in Excel and Google Sheets
+  return ToDeg(Math.atan2(Math.cos(obl)*Math.sin(lng), Math.cos(lng)));
 }
 
 /* Sun Declination (Degrees)
