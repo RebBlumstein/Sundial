@@ -489,5 +489,5 @@ function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
       }
     }
     
-  
+  return date1;
 }
