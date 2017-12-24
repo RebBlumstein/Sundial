@@ -436,58 +436,47 @@ function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
   var date1 = new Date(sunrise.getTime());
   var date2;
   
-  if (angle == 0) {
-    return sunrise;
+  if (angle > -0.5) {
+    increment = 3600000;
   }
-  else if (angle > 0) {
-    increment = 1;
+  else if (angle < -1.25) {
+    increment = -3600000;
   }
   else {
-    increment = -1;
+    // give an approximate result
+    return sunrise;
   }
   
-    for (var i = 0; i < 3; i++) {
-      found = false;
-      while (!found) {
-        var date2 = new Date(date1.getTime());
-      
-        if (i == 0) {
-          // increment hours
-          date2.setHours(date2.getHours() + increment);
-        }
-        else if (i == 1) {
-          // increment minutes
-          date2.setMinutes(date2.getMinutes() + increment);
-        }
-        else {
-          // increment seconds
-          date2.setSeconds(date2.getSeconds() + increment);
-        }
-      
-        // check if we overshot the angle
-        if (increment > 0) {
-          if(SolarEAatm(date2, latitude, longitude, timezone) > angle) {
-            // we overshot it
-            found = true;
+  found = false;
+  while (!found) {
+    // increment time forwards or backwards
+    date2 = new Date(date1.getTime() + increment);
+    
+    if (increment < 0) {
+      if (SolarEAatm(date2, latitude, longitude, timezone) < angle) {
+        // we overshot it, so revert the increment
+        date2 = new Date(date1.getTime());
+        increment /= 10;
         
-            // reverse the increment
-            date2 = new Date(date1.getTime());
-          }
+        if(increment <= 1000) {
+          found = true;
         }
-        else {
-          if(SolarEAatm(date2, latitude, longitude, timezone) < angle) {
-            // we overshot it
-            found = true;
+      }
+    }
+    else {
+      if (SolarEAatm(date2, latitude, longitude, timezone) > angle) {
+        // we overshot it, so revert the increment
+        date2 = new Date(date1.getTime());
+        increment /= 10;
         
-            // reverse the increment
-            date2 = new Date(date1.getTime());
-          }
+        if(increment <= 1000) {
+          found = true;
         }
-      
-        // start next iteration from new time
-        date1 = new Date(date2.getTime());
       }
     }
     
+    date1 = new Date(date2.getTime());
+  }
+  
   return date1;
 }
