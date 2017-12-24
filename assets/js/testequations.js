@@ -11,11 +11,11 @@ var longitude = document.getElementById("locLon").value;
 var elevation = document.getElementById("locEle").value;
 var timezone = document.getElementById("locTimeZone").value;
 
-var outobj = document.getElementById("TestParagraph"); // get the reference for the output paragraph
+var result;
 
 
 // Put in the table headers
-outobj.innerHTML = 
+result = 
   "<table><tr>\n"
     + "<th>Julian Day</th>\n"
     + "<th>Julian Century</th>\n"
@@ -49,7 +49,7 @@ outobj.innerHTML =
     + "</tr>\n";
 
 // Enter the values for midnight
-outobj.innerHTML += 
+result += 
   "<tr>\n"
     + "<td>" + GetJulianDay(date) + "</td>\n"
     + "<td>" + GetJulianCentury(date) + "</td>\n"
@@ -83,4 +83,8 @@ outobj.innerHTML +=
     + "</tr>\n";
 
 // finish the table
-outobj.innerHTML += "</table>";
+result += "</table>";
+
+//write the result to output
+
+document.getElementById("TestParagraph").innerHTML = result;
