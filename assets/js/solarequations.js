@@ -421,3 +421,73 @@ function HorizonModifier(elevation) {
 function SunRadius() {
   return 0.271014;
 }
+
+/* Find Morning Elevation Time
+Find the time that a given sun elevation angle is reached
+*/
+function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
+  var sunrise = TimeFromFrac(date, AstSunrise(date, latitude, longitude, timezone));
+  
+  // Get a better approximation by rerunning the equation from the first result
+  sunrise = TimeFromFrac(sunrise, AstSunrise(sunrise, latitude, longitude, timezone));
+  
+  var increment;
+  var found;
+  var date1 = new Date(sunrise.getTime());
+  var date2;
+  
+  if (angle == 0) {
+    return sunrise;
+  }
+  else if (angle > 0) {
+    increment = 1;
+  }
+  else {
+    increment = -1;
+  }
+  
+    for (var i = 0; i < 3; i++) {
+      found = false;
+      while (!found) {
+        var date2 = new Date(date1.getTime());
+      
+        if (i == 0) {
+          // increment hours
+          date2.setHours(date2.getHours() + increment);
+        }
+        else if (i == 1) {
+          // increment minutes
+          date2.setMinutes(date2.getMinutes() + increment);
+        }
+        else {
+          // increment seconds
+          date2.setSeconds(date2.getSeconds() + increment);
+        }
+      
+        // check if we overshot the angle
+        if (increment > 0) {
+          if(SolarEAatm(date2, latitude, longitude, timezone) > angle) {
+            // we overshot it
+            found = true;
+        
+            // reverse the increment
+            date2 = new Date(date1.getTime());
+          }
+        }
+        else {
+          if(SolarEAatm(date2, latitude, longitude, timezone) < angle) {
+            // we overshot it
+            found = true;
+        
+            // reverse the increment
+            date2 = new Date(date1.getTime());
+          }
+        }
+      
+        // start next iteration from new time
+        date1 = new Date(date2.getTime());
+      }
+    }
+    
+  
+}
