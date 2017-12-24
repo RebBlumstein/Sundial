@@ -416,8 +416,8 @@ function HorizonModifier(elevation) {
   return ToDeg(Math.pi/2 - Math.asin(R/(R + h)));
 }
 
-/* Sun Apparent Diameter in Degrees
+/* Sun Apparent Angular Radius in Degrees
 */
-function SunDiameter() {
-  return 0.271013889;
+function SunRadius() {
+  return 0.271014;
 }
