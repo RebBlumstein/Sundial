@@ -49,8 +49,8 @@ outobj.innerHTML =
     + "</tr>\n";
 
 // Enter the values for midnight
-outobj.innerHTML = 
-  "<table><tr>\n"
+outobj.innerHTML += 
+  "<tr>\n"
     + "<td>" + GetJulianDay(date) + "</td>\n"
     + "<td>" + GetJulianCentury(date) + "</td>\n"
     + "<td>" + GeoMeanLonSun(date) + "</td>\n"
