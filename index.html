@@ -33,13 +33,20 @@ title: Undergoing Construction and Testing
   </p>
   <p>
     Time Zone Offset from UTC (hours):
-    <input id="locTimeZone" class="controls" type="text" placeholder="(Prepend "-" if negative)" value="2">
+    <input id="locTimeZone" class="controls" type="text" placeholder="(Prepend - if negative)" value="2">
   </p>
 </div>
 
 <div id="TestDiv">
   <p id="TestParagraph">
     This is the paragraph for testing the Solar Equations.
+  </p>
+  <p>
+    Find Solar Elevation Angle in Morning (degrees):
+    <input id="TestAngle" class="controls" type="text" placeholder="(Prepend - if negative)" value="-16.1">
+    <input type="button" value="Calculate!" onclick="getAngle();">
+  </p>
+  <p id="TestResult">
   </p>
 </div>
 
