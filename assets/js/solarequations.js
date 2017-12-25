@@ -448,7 +448,7 @@ function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
   
   date1 = new Date(sunrise.getTime());
   found = false;
-  while (!found) {
+  while (!found && Math.abs(increment) > 1000) {
     // increment time forwards or backwards
     date2 = new Date(date1.getTime() + increment);
     
