@@ -536,10 +536,10 @@ function FindEveningElevationTime(date, latitude, longitude, timezone, angle) {
           found = true;
         }
       }
+    }
       
-      if (Math.abs(sunset.getTime() - date2.getTime()) > 86400000) {
-        return "Error"
-      }
+    if (Math.abs(sunset.getTime() - date2.getTime()) > 86400000) {
+      return "Error"
     }
     
     date1 = new Date(date2.getTime());
