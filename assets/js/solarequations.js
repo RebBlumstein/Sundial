@@ -433,20 +433,20 @@ function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
   
   var increment;
   var found;
-  var date1 = new Date(sunrise.getTime());
+  var date1;
   var date2;
   
-  if (angle > -0.5) {
+  if (angle > SolarEAatm(sunrise, latitude, longitude, timezone)) {
     increment = 3600000;
   }
-  else if (angle < -1.25) {
+  else if (angle < SolarEAatm(sunrise, latitude, longitude, timezone)) {
     increment = -3600000;
   }
   else {
-    // give an approximate result
     return sunrise;
   }
   
+  date1 = new Date(sunrise.getTime());
   found = false;
   while (!found) {
     // increment time forwards or backwards
