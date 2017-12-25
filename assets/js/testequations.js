@@ -13,10 +13,11 @@ var timezone = document.getElementById("locTimeZone").value;
 
 var result;
 
+result = "";
 
+/*
 // Put in the table headers
-result = 
-  "<table><tr>\n"
+result += "<table><tr>\n"
     + "<th>Julian Day</th>\n"
     + "<th>Julian Century</th>\n"
     + "<th>Geo M Long</th>\n"
@@ -87,7 +88,8 @@ result += "</table>\n";
 
 result += "<br><br>\n";
 
-result += "-16.1d: " + FindMorningElevationTime(date, latitude, longitude, timezone, -16.1) + "<br>";
+*/
+
 var sunrise1 = TimeFromFrac(date, AstSunrise(date, latitude, longitude, timezone));
 result += "Sunrise1: " + sunrise1 + "<br>";
 result += "Sunrise2: " + TimeFromFrac(sunrise1, AstSunrise(sunrise1, latitude, longitude, timezone)) + "<br>";
@@ -98,3 +100,19 @@ result += "Sunset2: " + TimeFromFrac(sunset1, AstSunset(sunset1, latitude, longi
 
 //write the result to output
 document.getElementById("TestParagraph").innerHTML = result;
+
+function getAngle() {
+  var date = new Date();
+  
+  var latitude = document.getElementById("locLat").value;
+  var longitude = document.getElementById("locLon").value;
+  var elevation = document.getElementById("locEle").value;
+  var timezone = document.getElementById("locTimeZone").value;
+  
+  var angle = document.getElementById("TestAngle").value;
+  
+  date = FindMorningElevationTime(date, latitude, longitude, timezone, angle);
+  
+  //write the result to output
+  document.getElementById("TestResult").innerHTML = date;
+}
