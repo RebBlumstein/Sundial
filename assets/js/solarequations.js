@@ -474,6 +474,10 @@ function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
         }
       }
     }
+      
+    if (Math.abs(sunrise.getTime() - date2.getTime()) > 86400000) {
+      return "Error"
+    }
     
     date1 = new Date(date2.getTime());
   }
@@ -531,6 +535,10 @@ function FindEveningElevationTime(date, latitude, longitude, timezone, angle) {
         if(Math.abs(increment) <= 1000) {
           found = true;
         }
+      }
+      
+      if (Math.abs(sunset.getTime() - date2.getTime()) > 86400000) {
+        return "Error"
       }
     }
     
