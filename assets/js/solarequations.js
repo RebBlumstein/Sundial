@@ -448,7 +448,7 @@ function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
   
   date1 = new Date(sunrise.getTime());
   found = false;
-  while (!found && Math.abs(increment) > 1000) {
+  while (!found) {
     // increment time forwards or backwards
     date2 = new Date(date1.getTime() + increment);
     
@@ -458,7 +458,7 @@ function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
         date2 = new Date(date1.getTime());
         increment /= 10;
         
-        if(increment <= 1000) {
+        if(Math.abs(increment) <= 1000) {
           found = true;
         }
       }
@@ -469,7 +469,7 @@ function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
         date2 = new Date(date1.getTime());
         increment /= 10;
         
-        if(increment <= 1000) {
+        if(Math.abs(increment) <= 1000) {
           found = true;
         }
       }
