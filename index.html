@@ -42,18 +42,20 @@ title: Undergoing Construction and Testing
   <p>
     Enter the date you want times for.
   </p>
-  <input id="onDate" type="date">
+  <input id="onDate" type="date" min="1910-01-01" max="2112-0-0">
 </div>
 
 <div id="Controls">
-  <input type="button" value="Calculate!" onclick="getAngle();">
+  <input type="button" value="Calculate!" onclick="getResults();">
 </div>
 
 <div id="ResultsDiv">
   <p>Results:
   </p>
+  <p id="resultsp">
+  </p>
 </div>
 
 <!-- Load in this order -->
 <script src="assets/js/solarequations.js"></script>
-<script src="assets/js/testequations.js"></script>
+<script src="assets/js/calculate.js"></script>
