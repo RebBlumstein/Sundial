@@ -111,7 +111,7 @@ function getAngle() {
   
   var angle = document.getElementById("TestAngle").value;
   
-  date = FindEveningElevationTime(date, latitude, longitude, timezone, angle);
+  date = FindMorningElevationTime(date, latitude, longitude, timezone, angle);
   
   //write the result to output
   document.getElementById("TestResult").innerHTML = date;
