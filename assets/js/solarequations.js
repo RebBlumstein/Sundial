@@ -480,3 +480,62 @@ function FindMorningElevationTime(date, latitude, longitude, timezone, angle) {
   
   return date1;
 }
+
+/* Find Evening Elevation Time
+Find the time that a given sun elevation angle is reached
+*/
+function FindEveningElevationTime(date, latitude, longitude, timezone, angle) {
+  var sunset = TimeFromFrac(date, AstSunset(date, latitude, longitude, timezone));
+  
+  // Get a better approximation by rerunning the equation from the first result
+  sunset = TimeFromFrac(sunset, AstSunset(sunset, latitude, longitude, timezone));
+  
+  var increment;
+  var found;
+  var date1;
+  var date2;
+  
+  if (angle > SolarEAatm(sunset, latitude, longitude, timezone)) {
+    increment = -3600000;
+  }
+  else if (angle < SolarEAatm(sunset, latitude, longitude, timezone)) {
+    increment = 3600000;
+  }
+  else {
+    return sunset;
+  }
+  
+  date1 = new Date(sunset.getTime());
+  found = false;
+  while (!found) {
+    // increment time forwards or backwards
+    date2 = new Date(date1.getTime() + increment);
+    
+    if (increment < 0) {
+      if (SolarEAatm(date2, latitude, longitude, timezone) < angle) {
+        // we overshot it, so revert the increment
+        date2 = new Date(date1.getTime());
+        increment /= 10;
+        
+        if(Math.abs(increment) <= 1000) {
+          found = true;
+        }
+      }
+    }
+    else {
+      if (SolarEAatm(date2, latitude, longitude, timezone) > angle) {
+        // we overshot it, so revert the increment
+        date2 = new Date(date1.getTime());
+        increment /= 10;
+        
+        if(Math.abs(increment) <= 1000) {
+          found = true;
+        }
+      }
+    }
+    
+    date1 = new Date(date2.getTime());
+  }
+  
+  return date1;
+}
