@@ -413,7 +413,7 @@ function HorizonModifier(elevation) {
   
   var R = 6371; // Earth Radius in km
   
-  return ToDeg(Math.pi/2 - Math.asin(R/(R + h)));
+  return ToDeg(Math.PI/2 - Math.asin(R/(R + h)));
 }
 
 /* Sun Apparent Angular Radius in Degrees
