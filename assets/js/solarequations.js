@@ -512,7 +512,7 @@ function FindEveningElevationTime(date, latitude, longitude, timezone, angle) {
     date2 = new Date(date1.getTime() + increment);
     
     if (increment < 0) {
-      if (SolarEAatm(date2, latitude, longitude, timezone) < angle) {
+      if (SolarEAatm(date2, latitude, longitude, timezone) > angle) {
         // we overshot it, so revert the increment
         date2 = new Date(date1.getTime());
         increment /= 10;
@@ -523,7 +523,7 @@ function FindEveningElevationTime(date, latitude, longitude, timezone, angle) {
       }
     }
     else {
-      if (SolarEAatm(date2, latitude, longitude, timezone) > angle) {
+      if (SolarEAatm(date2, latitude, longitude, timezone) < angle) {
         // we overshot it, so revert the increment
         date2 = new Date(date1.getTime());
         increment /= 10;
