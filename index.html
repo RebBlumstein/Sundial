@@ -5,8 +5,11 @@ title: Undergoing Construction and Testing
 
 
 <div id="MapSection">
-  <div id="GoogleMapsResults">
--You can use a Google Maps search to set your location values:
+  <div id="Instructions">
+    <p>
+      You can use a Google Maps search to set your location values. Or, you can enter the values by hand below.
+      "When everything is set up how you want, hit the "Calculate!" button below.
+    </p>
   </div>
   <input id="pac-input" class="controls" type="text" placeholder="Search Box">
   <div id="map" class="inner">
@@ -15,7 +18,7 @@ title: Undergoing Construction and Testing
 
 <div id="InputLocation">
   <p>
-    Or, enter your own location values here (The Google Maps result will fill these in for you):
+    Manual entry:
   </p>
   <p>
     Latitide North: 
@@ -35,16 +38,19 @@ title: Undergoing Construction and Testing
   </p>
 </div>
 
-<div id="TestDiv">
-  <p id="TestParagraph">
-    This is the paragraph for testing the Solar Equations.
-  </p>
+<div id="InputDate">
   <p>
-    Find Solar Elevation Angle in Morning (degrees):
-    <input id="TestAngle" class="controls" type="text" placeholder="(Prepend - if negative)" value="-16.1">
-    <input type="button" value="Calculate!" onclick="getAngle();">
+    Enter the date you want times for.
   </p>
-  <p id="TestResult">
+  <input id="onDate" type="date">
+</div>
+
+<div id="Controls">
+  <input type="button" value="Calculate!" onclick="getAngle();">
+</div>
+
+<div id="ResultsDiv">
+  <p>Results:
   </p>
 </div>
 
