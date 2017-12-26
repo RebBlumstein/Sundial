@@ -8,7 +8,7 @@
 
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: document.getElementById("locLat").value, lng: document.getElementById("locLon").value},
+          center: {lat: 31.8836667, lng: 35.2323083},
           zoom: 13,
           mapTypeId: 'roadmap'
         });
