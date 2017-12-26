@@ -4,7 +4,15 @@
 /* Find Alos HaShachar
 */
 function FindAlos(date, latitude, longitude, timezone, elevation) {
-  var angle = 5.3558056;
+  var angle = -18;
+  
+  return FindMorningElevationTime(date, latitude, longitude, timezone, angle);
+}
+
+/* Find Misheyakir
+*/
+FindMisheyakir(date, latitude, longitude, timezone, elevation)
+  var angle = -12;
   
   return FindMorningElevationTime(date, latitude, longitude, timezone, angle);
 }
@@ -30,9 +38,9 @@ function FindShkiah(date, latitude, longitude, timezone, elevation) {
 /* Find Tzeis HaKochavim
 */
 function FindTzeis(date, latitude, longitude, timezone, elevation) {
-  var angle = 5.3558056;
+  var angle = -5.3558056;
   
-  return FindMorningElevationTime(date, latitude, longitude, timezone, angle);
+  return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
 }
 
 /* Find the length of a Sha'ah Zemanis in ms
