@@ -24,9 +24,10 @@ function getResults() {
   
   
   document.getElementById("resultsp").innerHTML =
-    "Alos HaShachar: " + TimeFormat(alos)
-    + "<br>Neitz: " + TimeFormat(neitz)
-    + "<br>Sof Zeman Krias Shema: " + TimeFormat(szKriasShema);
+    "Alos HaShachar: " + alos.toLocaleTimeString()
+    + "<br>Misheyakir: " + misheyakir.toLocaleTimeString()
+    + "<br>Neitz: " + neitz.toLocaleTimeString()
+    + "<br>Sof Zeman Krias Shema: " + szKriasShema.toLocaleTimeString();
 }
 
 
