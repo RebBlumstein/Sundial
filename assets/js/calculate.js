@@ -24,9 +24,11 @@ function getResults() {
   var mKetanah = MinchahKetanah(date, latitude, longitude, timezone, elevation);
   var plag = Plag(date, latitude, longitude, timezone, elevation);
   
+  var chatzosTonight = FindChatzosTonight(date, latitude, longitude, timezone, elevation);
+  
   
   document.getElementById("resultsp").innerHTML =
-    "<strong>Chatzos HaLailah:</strong> " + chatzosNight.toLocaleTimeString()
+    "<strong>Chatzos Last Night:</strong> " + chatzosNight.toLocaleTimeString()
     + "<br><strong>Alos HaShachar:</strong> " + alos.toLocaleTimeString()
     + "<br><strong>Misheyakir:</strong> " + misheyakir.toLocaleTimeString()
     + "<br><strong>Neitz:</strong> " + neitz.toLocaleTimeString()
@@ -37,7 +39,8 @@ function getResults() {
     + "<br><strong>Minchah Ketanah:</strong> " + mKetanah.toLocaleTimeString()
     + "<br><strong>Plag HaMinchah:</strong> " + plag.toLocaleTimeString()
     + "<br><strong>Shkiah:</strong> " + shkiah.toLocaleTimeString()
-    + "<br><strong>Tzeis:</strong> " + tzeis.toLocaleTimeString();
+    + "<br><strong>Tzeis HaKochavim:</strong> " + tzeis.toLocaleTimeString()
+    + "<br><strong>Chatzos Tonight:</strong> " + chatzosTonight.toLocaleTimeString();
 }
 
 
