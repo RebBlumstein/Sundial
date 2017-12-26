@@ -38,7 +38,7 @@ function FindShkiah(date, latitude, longitude, timezone, elevation) {
 /* Find Tzeis HaKochavim
 */
 function FindTzeis(date, latitude, longitude, timezone, elevation) {
-  var angle = -5.3558056;
+  var angle = -4.979083;
   
   return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
 }
