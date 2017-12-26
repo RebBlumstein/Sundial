@@ -7,10 +7,26 @@ function getResults() {
   var timezone = document.getElementById("locTimeZone").value;
   var date = document.getElementById("onDate").valueAsDate;
   
+  var alos = FindAlos(date, latitude, longitude, timezone, elevation);
+  var misheyakir = FindMisheyakir(date, latitude, longitude, timezone, elevation);
   var neitz = FindNeitz(date, latitude, longitude, timezone, elevation);
   var shkiah = FindShkiah(date, latitude, longitude, timezone, elevation);
+  var tzeis = FindTzeis(date, latitude, longitude, timezone, elevation);
   
-  document.getElementById("resultsp").innerHTML = "Neitz is on: " + neitz + "<br>Shkiah is on: " + shkiah
+  var shaahzemanis = ShaahZemanis(date, latitude, longitude, timezone, elevation);
+  
+  var szKriasShema = SZShema(date, latitude, longitude, timezone, elevation);
+  var szTefillah = SZTefillah(date, latitude, longitude, timezone, elevation);
+  var chatzos = Chatzos(date, latitude, longitude, timezone, elevation);
+  var mGedolah = MinchahGedolah(date, latitude, longitude, timezone, elevation);
+  var mKetanah = MinchahKetanah(date, latitude, longitude, timezone, elevation);
+  var plag = Plag(date, latitude, longitude, timezone, elevation);
+  
+  
+  document.getElementById("resultsp").innerHTML =
+    "Alos HaShachar: " + TimeFormat(alos)
+    + "<br>Neitz: " + TimeFormat(neitz)
+    + "<br>Sof Zeman Krias Shema: " + TimeFormat(szKriasShema);
 }
 
 
