@@ -12,7 +12,7 @@ function FindAlos(date, latitude, longitude, timezone, elevation) {
 /* Find Misheyakir
 */
 function FindMisheyakir(date, latitude, longitude, timezone, elevation) {
-  var angle = -12;
+  var angle = -11.5;
   
   return FindMorningElevationTime(date, latitude, longitude, timezone, angle);
 }
@@ -38,7 +38,7 @@ function FindShkiah(date, latitude, longitude, timezone, elevation) {
 /* Find Tzeis HaKochavim
 */
 function FindTzeis(date, latitude, longitude, timezone, elevation) {
-  var angle = -4.979083;
+  var angle = -5.355806;
   
   return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
 }
