@@ -28,6 +28,13 @@ function getResults() {
     + "<br>Misheyakir: " + misheyakir.toLocaleTimeString()
     + "<br>Neitz: " + neitz.toLocaleTimeString()
     + "<br>Sof Zeman Krias Shema: " + szKriasShema.toLocaleTimeString();
+    + "<br>Sof Zeman Tefillah: " + szTefillah.toLocaleTimeString();
+    + "<br>Chatzos: " + chatzos.toLocaleTimeString();
+    + "<br>Minchah Gedolah: " + mGedolah.toLocaleTimeString();
+    + "<br>Minchah Ketanah: " + mKetanah.toLocaleTimeString();
+    + "<br>Plag HaMinchah: " + plag.toLocaleTimeString();
+    + "<br>Shkiah: " + shkiah.toLocaleTimeString();
+    + "<br>Tzeis: " + tzeis.toLocaleTimeString();
 }
 
 
