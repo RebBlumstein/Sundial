@@ -47,30 +47,6 @@ function getResults() {
 // Default the date picker to today
 document.getElementById("onDate").valueAsDate = new Date();
 
-// Get the current timezone for the default location
-var loc = "31.8836667, 35.2323083"; // Tel Tsiyon
-var d = new Date(); // Current date/time of user computer
-var ts = d.getTime()/1000 + d.getTimezoneOffset() * 60; // seconds since January 1, 1970 00:00 UTC
-var key = "AIzaSyCX7sylZzfohGH2lTNdVny47k0LY36XZmw";
-var call = "https://maps.googleapis.com/maps/api/timezone/json?location=" + loc + "&timestamp=" + ts + "&key=" + key;
- 
-var xhr = new XMLHttpRequest();
-xhr.open("GET", call);
-xhr.onload = function() {
-    if (xhr.status === 200) { // if Ajax request successful
-        var output = JSON.parse(xhr.responseText); // convert returned JSON string to JSON object
-        console.log(output.status); // log API return status for debugging purposes
-        if (output.status == "OK") { // if API reports everything was returned successfully
-            var offsets = output.dstOffset * 1000 + output.rawOffset * 1000 // get DST and time zone offsets in milliseconds
-            var localdate = new Date(ts * 1000 + offsets) // Date object containing current time of Tokyo (timestamp + dstOffset + rawOffset)
-            console.log(localdate.toLocaleString()) // Display current date and time
-        }
-    }
-    else {
-        console.log("Timezone request failed.  Returned status of " + xhr.status)
-    }
-};
-xhr.send();
 
 // run getResults on our default inputs
 getResults();
