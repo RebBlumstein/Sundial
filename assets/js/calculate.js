@@ -32,13 +32,13 @@ function getResults() {
     + "<br><strong>Alos HaShachar:</strong> " + alos.toLocaleTimeString()
     + "<br><strong>Misheyakir:</strong> " + misheyakir.toLocaleTimeString()
     + "<br><strong>Neitz:</strong> " + neitz.toLocaleTimeString()
-    + "<br><strong>Sof Zeman Krias Shema:</strong> " + szKriasShema.toLocaleTimeString()
+    + "<br><hr><strong>Sof Zeman Krias Shema:</strong> " + szKriasShema.toLocaleTimeString()
     + "<br><strong>Sof Zeman Tefillah:</strong> " + szTefillah.toLocaleTimeString()
     + "<br><strong>Chatzos:</strong> " + chatzos.toLocaleTimeString()
     + "<br><strong>Minchah Gedolah:</strong> " + mGedolah.toLocaleTimeString()
     + "<br><strong>Minchah Ketanah:</strong> " + mKetanah.toLocaleTimeString()
     + "<br><strong>Plag HaMinchah:</strong> " + plag.toLocaleTimeString()
-    + "<br><strong>Shkiah:</strong> " + shkiah.toLocaleTimeString()
+    + "<br><hr><strong>Shkiah:</strong> " + shkiah.toLocaleTimeString()
     + "<br><strong>Tzeis HaKochavim:</strong> " + tzeis.toLocaleTimeString()
     + "<br><strong>Chatzos Tonight:</strong> " + chatzosTonight.toLocaleTimeString();
 }
