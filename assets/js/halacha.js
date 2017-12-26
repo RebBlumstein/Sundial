@@ -46,11 +46,22 @@ function FindTzeis(date, latitude, longitude, timezone, elevation) {
 
 /* Find Chatzos HaLailah of last night
 */
-FindChatzosNight(date, latitude, longitude, timezone, elevation) {
+function FindChatzosNight(date, latitude, longitude, timezone, elevation) {
   var yesterday = new Date(date.getTime() - 86400000);
   
   var tzeis = FindTzeis(yesterday, latitude, longitude, timezone, elevation);
   var alos = FindAlos(date, latitude, longitude, timezone, elevation);
+  
+  return new Date(tzeis.getTime() + (alos.getTime() - tzeis.getTime())/2);
+}
+
+/* Find Chatzos HaLailah of tonight
+*/
+function FindChatzosTonight(date, latitude, longitude, timezone, elevation) {
+  var tomorrow = new Date(date.getTime() + 86400000);
+  
+  var tzeis = FindTzeis(date, latitude, longitude, timezone, elevation);
+  var alos = FindAlos(tomorrow, latitude, longitude, timezone, elevation);
   
   return new Date(tzeis.getTime() + (alos.getTime() - tzeis.getTime())/2);
 }
