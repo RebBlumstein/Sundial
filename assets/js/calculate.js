@@ -25,16 +25,16 @@ function getResults() {
   
   document.getElementById("resultsp").innerHTML =
     "Alos HaShachar: " + alos.toLocaleTimeString()
-    + "<br><h3>Misheyakir: </h3>" + misheyakir.toLocaleTimeString()
-    + "<br><h4>Neitz: </h4>" + neitz.toLocaleTimeString()
-    + "<br><h5>Sof Zeman Krias Shema: </h5>" + szKriasShema.toLocaleTimeString()
-    + "<br><strong>Sof Zeman Tefillah: </strong>" + szTefillah.toLocaleTimeString()
-    + "<br>Chatzos: " + chatzos.toLocaleTimeString()
-    + "<br>Minchah Gedolah: " + mGedolah.toLocaleTimeString()
-    + "<br>Minchah Ketanah: " + mKetanah.toLocaleTimeString()
-    + "<br>Plag HaMinchah: " + plag.toLocaleTimeString()
-    + "<br>Shkiah: " + shkiah.toLocaleTimeString()
-    + "<br>Tzeis: " + tzeis.toLocaleTimeString();
+    + "<br><strong>Misheyakir:</strong>" + misheyakir.toLocaleTimeString()
+    + "<br><strong>Neitz:</strong>" + neitz.toLocaleTimeString()
+    + "<br><strong>Sof Zeman Krias Shema:</strong>" + szKriasShema.toLocaleTimeString()
+    + "<br><strong>Sof Zeman Tefillah:</strong>" + szTefillah.toLocaleTimeString()
+    + "<br><strong>Chatzos:</strong>" + chatzos.toLocaleTimeString()
+    + "<br><strong>Minchah Gedolah:</strong>" + mGedolah.toLocaleTimeString()
+    + "<br><strong>Minchah Ketanah:</strong>" + mKetanah.toLocaleTimeString()
+    + "<br><strong>Plag HaMinchah:</strong>" + plag.toLocaleTimeString()
+    + "<br><strong>Shkiah:</strong>" + shkiah.toLocaleTimeString()
+    + "<br><strong>Tzeis:</strong>" + tzeis.toLocaleTimeString();
 }
 
 
