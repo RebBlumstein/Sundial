@@ -28,7 +28,9 @@ function getResults() {
   
   
   document.getElementById("resultsp").innerHTML =
-    "<strong>Chatzos Last Night:</strong> " + chatzosNight.toLocaleTimeString()
+    "<strong>" + new Date() + "</strong>"
+    + "<br><hr>"
+    + "<strong>Chatzos Last Night:</strong> " + chatzosNight.toLocaleTimeString()
     + "<br><strong>Alos HaShachar:</strong> " + alos.toLocaleTimeString()
     + "<br><strong>Misheyakir:</strong> " + misheyakir.toLocaleTimeString()
     + "<br><strong>Neitz:</strong> " + neitz.toLocaleTimeString()
