@@ -4,7 +4,7 @@
 /* Find Alos HaShachar
 */
 function FindAlos(date, latitude, longitude, timezone, elevation) {
-  var angle = -18;
+  var angle = -20.384972;
   
   return FindMorningElevationTime(date, latitude, longitude, timezone, angle);
 }
