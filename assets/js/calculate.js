@@ -36,7 +36,7 @@ function getResults() {
     + "<br><strong>Neitz:</strong> " + neitz.toLocaleTimeString()
     + "<br><hr><strong>Sof Zeman Krias Shema:</strong> " + szKriasShema.toLocaleTimeString()
     + "<br><strong>Sof Zeman Tefillah:</strong> " + szTefillah.toLocaleTimeString()
-    + "<br><strong>Chatzos:</strong> " + chatzos.toLocaleTimeString()
+    + "<br><strong>Chatzos HaYom:</strong> " + chatzos.toLocaleTimeString()
     + "<br><strong>Minchah Gedolah:</strong> " + mGedolah.toLocaleTimeString()
     + "<br><strong>Minchah Ketanah:</strong> " + mKetanah.toLocaleTimeString()
     + "<br><strong>Plag HaMinchah:</strong> " + plag.toLocaleTimeString()
