@@ -24,7 +24,7 @@ function getResults() {
   
   
   document.getElementById("resultsp").innerHTML =
-    "Alos HaShachar: " + alos.toLocaleTimeString()
+    "<strong>Alos HaShachar:</strong>" + alos.toLocaleTimeString()
     + "<br><strong>Misheyakir:</strong>" + misheyakir.toLocaleTimeString()
     + "<br><strong>Neitz:</strong>" + neitz.toLocaleTimeString()
     + "<br><strong>Sof Zeman Krias Shema:</strong>" + szKriasShema.toLocaleTimeString()
