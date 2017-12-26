@@ -25,10 +25,10 @@ function getResults() {
   
   document.getElementById("resultsp").innerHTML =
     "Alos HaShachar: " + alos.toLocaleTimeString()
-    + "<br>Misheyakir: " + misheyakir.toLocaleTimeString()
-    + "<br>Neitz: " + neitz.toLocaleTimeString()
-    + "<br>Sof Zeman Krias Shema: " + szKriasShema.toLocaleTimeString()
-    + "<br>Sof Zeman Tefillah: " + szTefillah.toLocaleTimeString()
+    + "<br><h3>Misheyakir: </h3>" + misheyakir.toLocaleTimeString()
+    + "<br><h4>Neitz: </h4>" + neitz.toLocaleTimeString()
+    + "<br><h5>Sof Zeman Krias Shema: </h5>" + szKriasShema.toLocaleTimeString()
+    + "<br><strong>Sof Zeman Tefillah: </strong>" + szTefillah.toLocaleTimeString()
     + "<br>Chatzos: " + chatzos.toLocaleTimeString()
     + "<br>Minchah Gedolah: " + mGedolah.toLocaleTimeString()
     + "<br>Minchah Ketanah: " + mKetanah.toLocaleTimeString()
