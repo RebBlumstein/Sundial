@@ -15,6 +15,8 @@ function getResults() {
   
   var shaahzemanis = ShaahZemanis(date, latitude, longitude, timezone, elevation);
   
+  var chatzosNight = FindChatzosNight(date, latitude, longitude, timezone, elevation);
+  
   var szKriasShema = SZShema(date, latitude, longitude, timezone, elevation);
   var szTefillah = SZTefillah(date, latitude, longitude, timezone, elevation);
   var chatzos = Chatzos(date, latitude, longitude, timezone, elevation);
@@ -24,17 +26,18 @@ function getResults() {
   
   
   document.getElementById("resultsp").innerHTML =
-    "<strong>Alos HaShachar:</strong>" + alos.toLocaleTimeString()
-    + "<br><strong>Misheyakir:</strong>" + misheyakir.toLocaleTimeString()
-    + "<br><strong>Neitz:</strong>" + neitz.toLocaleTimeString()
-    + "<br><strong>Sof Zeman Krias Shema:</strong>" + szKriasShema.toLocaleTimeString()
-    + "<br><strong>Sof Zeman Tefillah:</strong>" + szTefillah.toLocaleTimeString()
-    + "<br><strong>Chatzos:</strong>" + chatzos.toLocaleTimeString()
-    + "<br><strong>Minchah Gedolah:</strong>" + mGedolah.toLocaleTimeString()
-    + "<br><strong>Minchah Ketanah:</strong>" + mKetanah.toLocaleTimeString()
-    + "<br><strong>Plag HaMinchah:</strong>" + plag.toLocaleTimeString()
-    + "<br><strong>Shkiah:</strong>" + shkiah.toLocaleTimeString()
-    + "<br><strong>Tzeis:</strong>" + tzeis.toLocaleTimeString();
+    "<strong>Chatzos HaLailah:</strong> " + chatzosNight.toLocaleTimeString()
+    + "<br><strong>Alos HaShachar:</strong> " + alos.toLocaleTimeString()
+    + "<br><strong>Misheyakir:</strong> " + misheyakir.toLocaleTimeString()
+    + "<br><strong>Neitz:</strong> " + neitz.toLocaleTimeString()
+    + "<br><strong>Sof Zeman Krias Shema:</strong> " + szKriasShema.toLocaleTimeString()
+    + "<br><strong>Sof Zeman Tefillah:</strong> " + szTefillah.toLocaleTimeString()
+    + "<br><strong>Chatzos:</strong> " + chatzos.toLocaleTimeString()
+    + "<br><strong>Minchah Gedolah:</strong> " + mGedolah.toLocaleTimeString()
+    + "<br><strong>Minchah Ketanah:</strong> " + mKetanah.toLocaleTimeString()
+    + "<br><strong>Plag HaMinchah:</strong> " + plag.toLocaleTimeString()
+    + "<br><strong>Shkiah:</strong> " + shkiah.toLocaleTimeString()
+    + "<br><strong>Tzeis:</strong> " + tzeis.toLocaleTimeString();
 }
 
 
