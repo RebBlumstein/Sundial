@@ -43,6 +43,18 @@ function FindTzeis(date, latitude, longitude, timezone, elevation) {
   return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
 }
 
+
+/* Find Chatzos HaLailah of last night
+*/
+FindChatzosNight(date, latitude, longitude, timezone, elevation) {
+  var yesterday = new Date(date.getTime() - 86400000);
+  
+  var tzeis = FindTzeis(yesterday, latitude, longitude, timezone, elevation);
+  var alos = FindAlos(date, latitude, longitude, timezone, elevation);
+  
+  return new Date(tzeis.getTime() + (alos.getTime() - tzeis.getTime())/2);
+}
+
 /* Find the length of a Sha'ah Zemanis in ms
 */
 function ShaahZemanis(date, latitude, longitude, timezone, elevation) {
