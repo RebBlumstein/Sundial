@@ -11,7 +11,7 @@ function FindAlos(date, latitude, longitude, timezone, elevation) {
 
 /* Find Misheyakir
 */
-FindMisheyakir(date, latitude, longitude, timezone, elevation)
+FindMisheyakir(date, latitude, longitude, timezone, elevation) {
   var angle = -12;
   
   return FindMorningElevationTime(date, latitude, longitude, timezone, angle);
