@@ -12,6 +12,7 @@ function getResults() {
   var neitz = FindNeitz(date, latitude, longitude, timezone, elevation);
   var shkiah = FindShkiah(date, latitude, longitude, timezone, elevation);
   var tzeis = FindTzeis(date, latitude, longitude, timezone, elevation);
+  var commonTzeis = FindCommonTzeis(date, latitude, longitude, timezone, elevation);
   
   var shaahzemanis = ShaahZemanis(date, latitude, longitude, timezone, elevation);
   
@@ -42,6 +43,7 @@ function getResults() {
     + "<br><strong>Plag HaMinchah:</strong> " + plag.toLocaleTimeString()
     + "<br><hr><strong>Shkiah:</strong> " + shkiah.toLocaleTimeString()
     + "<br><strong>Tzeis HaKochavim:</strong> " + tzeis.toLocaleTimeString()
+    + "<br><strong>Common (LeChumrah) Tzeis HaKochavim:</strong> " + commonTzeis.toLocaleTimeString()
     + "<br><strong>Chatzos Tonight:</strong> " + chatzosTonight.toLocaleTimeString();
 }
 
