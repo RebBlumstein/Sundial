@@ -51,6 +51,14 @@ function FindCommonTzeis(date, latitude, longitude, timezone, elevation) {
   return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
 }
 
+/* Find "90 Minutes" Rabbeinu Tam Tzeis HaKochavim
+*/
+function FindRTTzeis(date, latitude, longitude, timezone, elevation) {
+  var angle = -20.384972;
+  
+  return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
+}
+
 
 /* Find Chatzos HaLailah of last night
 */
