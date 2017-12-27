@@ -43,6 +43,14 @@ function FindTzeis(date, latitude, longitude, timezone, elevation) {
   return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
 }
 
+/* Find "36 Minutes" Common Tzeis HaKochavim
+*/
+function FindCommonTzeis(date, latitude, longitude, timezone, elevation) {
+  var angle = -8.5;
+  
+  return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
+}
+
 
 /* Find Chatzos HaLailah of last night
 */
