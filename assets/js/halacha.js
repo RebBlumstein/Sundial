@@ -43,6 +43,14 @@ function FindTzeis(date, latitude, longitude, timezone, elevation) {
   return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
 }
 
+/* Find "25 minutes" Tzeis HaKochavim
+*/
+function FindTwentyFiveTzeis(date, latitude, longitude, timezone, elevation) {
+  var angle = -6.45;
+  
+  return FindEveningElevationTime(date, latitude, longitude, timezone, angle);
+}
+
 /* Find "36 Minutes" Common Tzeis HaKochavim
 */
 function FindCommonTzeis(date, latitude, longitude, timezone, elevation) {
@@ -82,13 +90,22 @@ function FindChatzosTonight(date, latitude, longitude, timezone, elevation) {
   return new Date(tzeis.getTime() + (alos.getTime() - tzeis.getTime())/2);
 }
 
-/* Find the length of a Sha'ah Zemanis in ms
+/* Find the length of a Sha'ah Zemanis (Gra) in ms
 */
 function ShaahZemanis(date, latitude, longitude, timezone, elevation) {
   var neitz = FindNeitz(date, latitude, longitude, timezone, elevation);
   var shkiah = FindShkiah(date, latitude, longitude, timezone, elevation);
   
   return (shkiah.getTime() - neitz.getTime())/12;
+}
+
+/* Find the length of a Sha'ah Zemanis (Ben Ish Chai) in ms
+*/
+function ShaahZemanisBIC(date, latitude, longitude, timezone, elevation) {
+  var alos = FindAlos(date, latitude, longitude, timezone, elevation);
+  var tzeis = FindTwentyFiveTzeis(date, latitude, longitude, timezone, elevation);
+  
+  return (tzeis.getTime() - alos.getTime())/12;
 }
 
 /* Find Sof Zeman Krias Shema
@@ -136,11 +153,20 @@ function MinchahKetanah(date, latitude, longitude, timezone, elevation) {
   return new Date(neitz.getTime() + sz*9.5);
 }
 
-/* Find Plag HaMinchah
+/* Find Plag HaMinchah (Gra)
 */
 function Plag(date, latitude, longitude, timezone, elevation) {
   var neitz = FindNeitz(date, latitude, longitude, timezone, elevation);
   var sz = ShaahZemanis(date, latitude, longitude, timezone, elevation);
   
   return new Date(neitz.getTime() + sz*10.75);
+}
+
+/* Find Plag HaMinchah (Ben Ish Chai)
+*/
+function PlagBIC(date, latitude, longitude, timezone, elevation) {
+  var alos = FindAlos(date, latitude, longitude, timezone, elevation);
+  var sz = ShaahZemanisBIC(date, latitude, longitude, timezone, elevation);
+  
+  return new Date(alos.getTime() + sz*10.75);
 }
