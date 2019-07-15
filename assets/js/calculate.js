@@ -25,6 +25,7 @@ function getResults() {
   var mGedolah = MinchahGedolah(date, latitude, longitude, timezone, elevation);
   var mKetanah = MinchahKetanah(date, latitude, longitude, timezone, elevation);
   var plag = Plag(date, latitude, longitude, timezone, elevation);
+  var plagBIC = PlagBIC(date, latitude, longitude, timezone, elevation);
   
   var chatzosTonight = FindChatzosTonight(date, latitude, longitude, timezone, elevation);
   
@@ -41,7 +42,8 @@ function getResults() {
     + "<br><strong>Chatzos HaYom:</strong> " + chatzos.toLocaleTimeString()
     + "<br><strong>Minchah Gedolah:</strong> " + mGedolah.toLocaleTimeString()
     + "<br><strong>Minchah Ketanah:</strong> " + mKetanah.toLocaleTimeString()
-    + "<br><strong>Plag HaMinchah:</strong> " + plag.toLocaleTimeString()
+    + "<br><strong>Plag HaMinchah (Gra):</strong> " + plag.toLocaleTimeString()
+    + "<br><strong>Plag HaMinchah (Ben Ish Chai):</strong> " + plagBIC.toLocaleTimeString()
     + "<br><hr><strong>Shkiah:</strong> " + shkiah.toLocaleTimeString()
     + "<br><strong>Tzeis HaKochavim:</strong> " + tzeis.toLocaleTimeString()
     + "<br><strong>Common (LeChumrah) Tzeis HaKochavim:</strong> " + commonTzeis.toLocaleTimeString()
